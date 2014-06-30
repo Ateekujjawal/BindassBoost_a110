@@ -25,7 +25,7 @@ fi
 #setting build
 cd ~/DedS_a110/kernel
 export ARCH=arm
-export PATH=~/arm-linux-androideab-4.6/bin:$PATH
+export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 export CROSS_COMPILE=arm-linux-androideabi-
 #export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 #export CROSS_COMPILE=arm-linux-androideabi-
@@ -37,7 +37,7 @@ cp ~/DedS_a110/mtktools/temp/system/lib/modules/m4u.ko ~/DedS_a110/mtktools/BBFZ
 
 
 #adding 512kb header
-cd ~/DedS_110/mediatek/build/tools
+cd ~/DedS_a110/mediatek/build/tools
 ./mkimage ~/DedS_a110/kernel/arch/arm/boot/zImage KERNEL > ~/DedS_a110/mtktools/zimage
 
 #repacking boot
