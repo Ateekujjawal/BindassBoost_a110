@@ -120,6 +120,11 @@ static long int get_current_time_us(void)
     return (t.tv_sec & 0xFFF) * 1000000 + t.tv_usec;
 }
 #endif
+static void lcm_mdelay(UINT32 ms)
+{
+    udelay(1000 * ms);
+}
+
 #if ENABLE_DSI_INTERRUPT
 static irqreturn_t _DSI_InterruptHandler(int irq, void *dev_id)
 {   
