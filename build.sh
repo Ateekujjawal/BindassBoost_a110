@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/BindassBoost_a110/mediatek/config/s9081
+cd ~/DedS_a110/mediatek/config/s9081
 
 if [ "4.2" == "$1" ]; then
 	echo "4.2 unified selected"
@@ -23,30 +23,30 @@ else
 fi
 
 #setting build
-cd ~/BindassBoost_a110/kernel
+cd ~/DedS_a110/kernel
 export ARCH=arm
-export PATH=~/toolchain/Arm_A9_linaro_4.8.3/bin:$PATH
-export CROSS_COMPILE=arm-gnueabi-
-#export PATH=~/toolchain/arm-eabi-linaro-4.6.2/bin:$PATH
-#export CROSS_COMPILE=arm-eabi-
+export PATH=~/arm-linux-androideab-4.6/bin:$PATH
+export CROSS_COMPILE=arm-linux-androideabi-
+#export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
+#export CROSS_COMPILE=arm-linux-androideabi-
 TARGET_PRODUCT=s9081 MTK_ROOT_CUSTOM=../mediatek/custom/ make -j5
 
-make -j5 TARGET_PRODUCT=s9081 INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=~/BindassBoost_a110/mtktools/temp/system android_modules_install -j5
-cp ~/BindassBoost_a110/mtktools/temp/system/lib/modules/zram.ko ~/BindassBoost_a110/mtktools/BBFZ/system/lib/modules/zram.ko
-cp ~/BindassBoost_a110/mtktools/temp/system/lib/modules/m4u.ko ~/BindassBoost_a110/mtktools/BBFZ/system/lib/modules/m4u.ko
+make -j5 TARGET_PRODUCT=s9081 INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=~/DedS_a110/mtktools/temp/system android_modules_install -j5
+cp ~/DedS_a110/mtktools/temp/system/lib/modules/zram.ko ~/DedS_a110/mtktools/BBFZ/system/lib/modules/zram.ko
+cp ~/DedS_a110/mtktools/temp/system/lib/modules/m4u.ko ~/DedS_a110/mtktools/BBFZ/system/lib/modules/m4u.ko
 
 
 #adding 512kb header
-cd ~/BindassBoost_a110/mediatek/build/tools
-./mkimage ~/BindassBoost_a110/kernel/arch/arm/boot/zImage KERNEL > ~/BindassBoost_a110/mtktools/zimage
+cd ~/DedS_110/mediatek/build/tools
+./mkimage ~/DedS_a110/kernel/arch/arm/boot/zImage KERNEL > ~/DedS_a110/mtktools/zimage
 
 #repacking boot
-cd ~/BindassBoost_a110/mtktools
-./repack.pl -boot zimage $Ramdisk ~/BindassBoost_a110/mtktools/BBFZ/boot.img
+cd ~/DedS_a110/mtktools
+./repack.pl -boot zimage $Ramdisk ~/DedS_a110/mtktools/BBFZ/boot.img
 
 #creating flashable zip
-cd ~/BindassBoost_a110/mtktools/BBFZ
+cd ~/DedS_a110/mtktools/BBFZ
 zip -r out .
-mv ~/BindassBoost_a110/mtktools/BBFZ/out.zip ~/BindassBoost_a110/out/"$1"_BindassBoost_v2.7.zip
+mv ~/DedS_a110/mtktools/BBFZ/out.zip ~/DedS_a110/out/"$1"_DedS_kernel_001.zip
 
 
