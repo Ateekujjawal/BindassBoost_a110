@@ -25,7 +25,7 @@ fi
 #setting build
 cd ~/DedS_a110/kernel
 export ARCH=arm
-export PATH=~/arm-linux-androideab-4.6/bin:$PATH
+export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 export CROSS_COMPILE=arm-linux-androideabi-
 #export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 #export CROSS_COMPILE=arm-linux-androideabi-
