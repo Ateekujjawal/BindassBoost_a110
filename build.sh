@@ -29,7 +29,7 @@ export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 export CROSS_COMPILE=arm-linux-androideabi-
 #export PATH=~/arm-linux-androideabi-4.6/bin:$PATH
 #export CROSS_COMPILE=arm-linux-androideabi-
-TARGET_PRODUCT=s9081 MTK_ROOT_CUSTOM=../mediatek/custom/ make -j5 -o2
+TARGET_PRODUCT=s9081 MTK_ROOT_CUSTOM=../mediatek/custom/ make -j5
 
 make -j5 TARGET_PRODUCT=s9081 INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=~/DedS_a110/mtktools/temp/system android_modules_install -j5
 cp ~/DedS_a110/mtktools/temp/system/lib/modules/zram.ko ~/DedS_a110/mtktools/BBFZ/system/lib/modules/zram.ko

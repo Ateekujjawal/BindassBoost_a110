@@ -1,3 +1,3 @@
-#define UTS_RELEASE "3.4.5-BindassBoost_v2.7"
+#define UTS_RELEASE "3.4.5-DedS_kernel_001"
 #define BUILD_INFO "ALPS.JB.MP.V1"
 #define BUILD_FINGERPRINT "s9081"
