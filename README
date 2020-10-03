@@ -2,3 +2,6 @@ cd to DedS_a110
 
 use build.sh 4.2 to build kernel
 use clean.sh to clean
+
+
+# this code does not work, please try something else
